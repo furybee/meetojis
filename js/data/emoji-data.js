@@ -170,16 +170,15 @@ class EmojiData {
         { emoji: '💡', keywords: ['bulb', 'idea', 'light', 'bright', 'innovation'] },
         { emoji: '🔔', keywords: ['bell', 'notification', 'alert', 'ring'] },
         { emoji: '🔕', keywords: ['bell', 'slash', 'silent', 'mute', 'quiet'] },
-        { emoji: '🎯', keywords: ['target', 'goal', 'aim', 'bullseye', 'focus'] },
+        
         { emoji: '💎', keywords: ['diamond', 'gem', 'jewel', 'precious', 'sparkle'] },
         { emoji: '🎁', keywords: ['gift', 'present', 'box', 'surprise', 'birthday'] },
-        { emoji: '🏆', keywords: ['trophy', 'award', 'winner', 'champion', 'first'] },
-        { emoji: '🥇', keywords: ['gold', 'medal', 'first', 'place', 'winner'] },
-        { emoji: '🥈', keywords: ['silver', 'medal', 'second', 'place', 'runner'] },
-        { emoji: '🥉', keywords: ['bronze', 'medal', 'third', 'place'] },
-        { emoji: '🎖️', keywords: ['medal', 'military', 'honor', 'award', 'decoration'] },
-        { emoji: '🏅', keywords: ['medal', 'sports', 'achievement', 'award'] },
-        { emoji: '🎪', keywords: ['circus', 'tent', 'fun', 'entertainment', 'show'] },
+        
+        
+        
+        
+        
+        
         { emoji: '🎭', keywords: ['performing', 'arts', 'theater', 'masks', 'drama'] },
         { emoji: '🎨', keywords: ['artist', 'palette', 'paint', 'creative', 'art'] },
         { emoji: '🎸', keywords: ['guitar', 'music', 'rock', 'instrument', 'song'] },
@@ -366,14 +365,14 @@ class EmojiData {
         { emoji: '🚲', keywords: ['bicycle', 'bike', 'cycle', 'pedal', 'exercise'] },
         { emoji: '🛴', keywords: ['kick', 'scooter', 'ride', 'fun', 'transport'] },
         { emoji: '🛹', keywords: ['skateboard', 'skate', 'board', 'sport', 'ride'] },
-        { emoji: '🛼', keywords: ['roller', 'skate', 'wheels', 'fun', 'sport'] },
+        
         { emoji: '🚁', keywords: ['helicopter', 'chopper', 'aircraft', 'fly', 'rotor'] },
         { emoji: '🛸', keywords: ['flying', 'saucer', 'ufo', 'alien', 'space'] },
         { emoji: '✈️', keywords: ['airplane', 'plane', 'aircraft', 'fly', 'travel'] },
         { emoji: '🛩️', keywords: ['small', 'airplane', 'plane', 'aircraft', 'private'] },
         { emoji: '🛫', keywords: ['airplane', 'departure', 'takeoff', 'travel', 'fly'] },
         { emoji: '🛬', keywords: ['airplane', 'arrival', 'landing', 'travel', 'fly'] },
-        { emoji: '🪂', keywords: ['parachute', 'skydiving', 'fall', 'jump', 'air'] },
+        
         { emoji: '🚀', keywords: ['rocket', 'space', 'launch', 'fast', 'blast'] },
         { emoji: '🛰️', keywords: ['satellite', 'space', 'orbit', 'communication'] },
         { emoji: '🚂', keywords: ['locomotive', 'train', 'steam', 'railway'] },
@@ -404,7 +403,7 @@ class EmojiData {
         { emoji: '🚦', keywords: ['vertical', 'traffic', 'light', 'signal', 'stop'] },
         { emoji: '🛣️', keywords: ['motorway', 'highway', 'road', 'travel'] },
         { emoji: '🗺️', keywords: ['world', 'map', 'geography', 'travel', 'navigation'] },
-        { emoji: '🏁', keywords: ['chequered', 'flag', 'racing', 'finish', 'start'] },
+        
         { emoji: '🚩', keywords: ['triangular', 'flag', 'post', 'warning', 'mark'] }
       ]
     },
