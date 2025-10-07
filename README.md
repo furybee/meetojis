@@ -41,8 +41,6 @@ MIT
 ### Useful Scripts
 
 - `node scripts/check-duplicates.js` — detect duplicate emojis (non‑zero exit on duplicates).
-- `node scripts/find-missing-flags.js` — compare `flags` with `scripts/flags-by-code.json` and generate a snippet of missing ones.
-- `node scripts/split-categories.js` — split inline categories into `js/data/categories/` and update the manifest.
 
 ### Build Extension
 
