@@ -1,108 +1,184 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <style>
-        body {
-            width: 300px;
-            padding: 20px;
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-        }
+      body {
+        width: 300px;
+        padding: 20px;
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f8f9fa;
+      }
 
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+      .header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
-        .header h1 {
-            margin: 0;
-            color: #1a73e8;
-            font-size: 24px;
-        }
+      .header h1 {
+        margin: 0;
+        color: #1f1f1f;
+        font-size: 20px;
+      }
 
-        .header p {
-            margin: 5px 0 0 0;
-            color: #5f6368;
-            font-size: 14px;
-        }
+      .header p {
+        margin: 5px 0 0 0;
+        color: #5f6368;
+        font-size: 14px;
+      }
 
-        .instructions {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #e8eaed;
-        }
+      .instructions {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #e8eaed;
+      }
 
-        .instructions h3 {
-            margin: 0 0 10px 0;
-            color: #202124;
-            font-size: 16px;
-        }
+      .instructions h3 {
+        margin: 0 0 10px 0;
+        color: #202124;
+        font-size: 16px;
+      }
 
-        .instructions ol {
-            margin: 0;
-            padding-left: 20px;
-            color: #5f6368;
-        }
+      .instructions ol {
+        margin: 0;
+        padding-left: 20px;
+        color: #5f6368;
+      }
 
-        .instructions li {
-            margin-bottom: 5px;
-            font-size: 14px;
-        }
+      .instructions li {
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
 
-        .status {
-            text-align: center;
-            padding: 10px;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #e8eaed;
-        }
+      .status {
+        text-align: center;
+        padding: 10px;
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #e8eaed;
+      }
 
-        .status.active {
-            background: #e8f0fe;
-            border-color: #1a73e8;
-            color: #1a73e8;
-        }
+      .status.active {
+        background: #e8f0fe;
+        border-color: #1a73e8;
+        color: #1a73e8;
+      }
 
-        .status.inactive {
-            background: #fef7e0;
-            border-color: #f9ab00;
-            color: #e37400;
-        }
+      .status.inactive {
+        background: #fef7e0;
+        border-color: #f9ab00;
+        color: #e37400;
+      }
 
-        .emoji-preview {
-            font-size: 48px;
-            text-align: center;
-            margin: 15px 0;
-        }
+      .emoji-preview {
+        font-size: 32px;
+        text-align: center;
+        margin: 15px 0;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid #e8eaed;
+        color: #5f6368;
+        font-size: 12px;
+      }
+      .footer a {
+        color: #1a73e8;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .support {
+        text-align: center;
+        margin-top: 12px;
+        color: #6b7076;
+        font-size: 12px;
+      }
+      .support a {
+        color: #5f6368;
+        text-decoration: none;
+      }
+      .support a:hover {
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-        <h1>😊 Meetojis</h1>
-        <p>Add emojis to your Google Meet messages</p>
+      <h1>
+        <img
+          src="icons/icon48.png"
+          alt="Meetojis icon"
+          width="18"
+          height="18"
+          style="vertical-align: middle; border-radius: 50%"
+        />
+        Meetojis
+      </h1>
+      <p>Add emojis to your Google Meet messages</p>
     </div>
 
     <div class="emoji-preview">🎉</div>
 
     <div class="instructions">
-        <h3>How to use:</h3>
-        <ol>
-            <li>Join a Google Meet</li>
-            <li>Open the chat/messages panel</li>
-            <li>Look for the 😊 button next to the message input</li>
-            <li>Click it to select and insert emojis</li>
-        </ol>
+      <h3>How to use:</h3>
+      <ol>
+        <li>Join a Google Meet</li>
+        <li>Open the chat/messages panel</li>
+        <li>
+          Look for the
+          <img
+            src="icons/icon48.png"
+            alt="Meetojis icon"
+            width="18"
+            height="18"
+            style="vertical-align: middle; border-radius: 50%"
+          />
+          button next to the message input
+        </li>
+        <li>Click it to select and insert emojis</li>
+      </ol>
     </div>
 
     <div id="status" class="status">
-        <strong>Ready to use!</strong><br>
-        <small>Navigate to a Google Meet to start using emojis</small>
+      <strong>Ready to use!</strong><br />
+      <small>Navigate to a Google Meet to start using emojis</small>
+    </div>
+
+    <div class="support">
+      Enjoying Meetojis? Support us:<br />
+      <a href="https://www.buymeacoffee.com/xyugxh7bk" target="_blank" rel="noopener noreferrer"
+        >Buy me a coffee</a
+      >
+      •
+      <a
+        href="https://donate.stripe.com/fZeg1Sgml971dbieUU"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Card</a
+      >
+      •
+      <a
+        href="https://www.paypal.com/donate/?hosted_button_id=T7KZA4MLT5XTU"
+        target="_blank"
+        rel="noopener noreferrer"
+        >PayPal</a
+      >
+    </div>
+
+    <div class="footer">
+      Found a bug? Report it:
+      <a href="https://github.com/furybee/meetojis" target="_blank" rel="noopener noreferrer"
+        >github.com/furybee/meetojis</a
+      >
     </div>
 
     <script src="popup.js"></script>
-</body>
+  </body>
 </html>

@@ -1,7 +1,7 @@
 .meetojis-btn {
   background: white;
   /*background: #0b57d0;*/
-    border: none;
+  border: none;
   border-radius: 24px;
   color: white;
   cursor: pointer;
@@ -37,7 +37,7 @@
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   padding: 12px;
   width: 300px;
   height: 300px;
@@ -66,7 +66,7 @@
   font-size: 14px;
   pointer-events: none;
   z-index: 1;
-    fill: #666666
+  fill: #666666;
 }
 
 .meetojis-search {
@@ -109,16 +109,15 @@
   display: flex;
   justify-content: center;
   gap: 4px;
-  padding: 8px;
+  padding-top: 8px;
   border-top: 1px solid #e0e0e0;
   margin-top: 8px;
 }
 
 .meetojis-category-btn {
   background: none;
-  border: none;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -126,6 +125,7 @@
   justify-content: center;
   transition: background-color 0.2s;
   color: #666;
+  border: 2px solid transparent;
 }
 
 .meetojis-category-btn:hover {

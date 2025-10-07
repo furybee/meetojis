@@ -3,16 +3,28 @@
   "name": "Meetojis",
   "version": "1.0.0",
   "description": "Send emojis in Google Meet Messages area",
-  "permissions": [
-    "activeTab"
-  ],
-  "host_permissions": [
-    "https://meet.google.com/*"
-  ],
+  "permissions": ["activeTab"],
+  "host_permissions": ["https://meet.google.com/*"],
   "content_scripts": [
     {
       "matches": ["https://meet.google.com/*"],
-      "js": ["content.js"],
+      "js": [
+        "js/data/categories/flags.js",
+        "js/data/categories/smileys.js",
+        "js/data/categories/gestures.js",
+        "js/data/categories/animals.js",
+        "js/data/categories/buildings.js",
+        "js/data/categories/transports.js",
+        "js/data/categories/sports.js",
+        "js/data/categories/objects.js",
+        "js/data/emoji-data.js",
+        "js/services/dom-service.js",
+        "js/services/emoji-service.js",
+        "js/components/emoji-button.js",
+        "js/components/emoji-picker.js",
+        "js/meetojis-controller.js",
+        "js/content.js"
+      ],
       "css": ["content.css"]
     }
   ],
