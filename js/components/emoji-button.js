@@ -28,14 +28,14 @@ class EmojiButton {
 
     this.buttonElement = this.domService.createElement('button', {
       id: 'meetojis-button',
-      className: 'meetojis-btn'
+      className: 'meetojis-btn',
     });
 
     // Create icon image
     const img = this.domService.createElement('img', {
       src: chrome.runtime.getURL('icons/icon48.png'),
       width: '24',
-      height: '24'
+      height: '24',
     });
     img.style.borderRadius = '50%';
     this.buttonElement.appendChild(img);

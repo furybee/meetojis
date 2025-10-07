@@ -71,7 +71,7 @@ class MeetojisController {
 
     this.observer.observe(document.body, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
   }
 

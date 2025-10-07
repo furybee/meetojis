@@ -25,8 +25,8 @@ class EmojiService {
     }
 
     const term = searchTerm.toLowerCase().trim();
-    return this.allEmojis.filter(emojiObj =>
-      emojiObj.keywords.some(keyword => keyword.includes(term))
+    return this.allEmojis.filter((emojiObj) =>
+      emojiObj.keywords.some((keyword) => keyword.includes(term))
     );
   }
 

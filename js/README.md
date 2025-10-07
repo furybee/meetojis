@@ -16,6 +16,7 @@ js/
 ## Principes SOLID Appliqués
 
 ### 1. **Single Responsibility Principle (SRP)**
+
 - **EmojiData**: Gère uniquement les données d'emojis
 - **DomService**: Gère uniquement les opérations DOM
 - **EmojiService**: Gère uniquement la logique des emojis (recherche, filtrage)
@@ -23,19 +24,23 @@ js/
 - **EmojiPicker**: Gère uniquement l'interface du picker
 
 ### 2. **Open/Closed Principle (OCP)**
+
 - Ajout de nouvelles catégories d'emojis sans modifier le code existant
 - Extension facile avec de nouveaux types de services
 - Composants extensibles via héritage
 
 ### 3. **Liskov Substitution Principle (LSP)**
+
 - Les services peuvent être remplacés par des implémentations alternatives
 - Interface cohérente entre tous les composants
 
 ### 4. **Interface Segregation Principle (ISP)**
+
 - Chaque classe n'expose que les méthodes nécessaires
 - Séparation claire entre les responsabilités
 
 ### 5. **Dependency Inversion Principle (DIP)**
+
 - Le contrôleur dépend d'abstractions (services)
 - Injection de dépendances pour faciliter les tests
 - Inversion du contrôle
@@ -43,7 +48,9 @@ js/
 ## Composants
 
 ### MeetojisController
+
 Contrôleur principal qui orchestre tous les composants.
+
 - Coordonne les services et composants
 - Gère le cycle de vie de l'application
 - Point d'entrée unique
@@ -51,11 +58,13 @@ Contrôleur principal qui orchestre tous les composants.
 ### Services
 
 #### DomService
+
 - Manipulation DOM
 - Recherche d'éléments
 - Gestion des événements
 
 #### EmojiService
+
 - Logique des emojis
 - Recherche et filtrage
 - Gestion des catégories
@@ -63,11 +72,13 @@ Contrôleur principal qui orchestre tous les composants.
 ### Composants UI
 
 #### EmojiButton
+
 - Bouton principal dans Meet
 - Gestion de l'injection dans le DOM
 - Déclenchement du picker
 
 #### EmojiPicker
+
 - Interface du picker d'emojis
 - Gestion des catégories
 - Recherche en temps réel
@@ -83,16 +94,19 @@ Contrôleur principal qui orchestre tous les composants.
 ## Ajout de Nouvelles Fonctionnalités
 
 ### Nouvelle Catégorie d'Emoji
+
 1. Ajouter dans `EmojiData.CATEGORIES`
 2. Ajouter l'icône dans `EmojiData.CATEGORY_ICONS`
 3. Aucun autre changement nécessaire ✨
 
 ### Nouveau Service
+
 1. Créer dans `js/services/`
 2. Injecter dans `MeetojisController`
 3. Utiliser via l'injection de dépendances
 
 ### Nouveau Composant UI
+
 1. Créer dans `js/components/`
 2. Hériter du pattern existant
 3. Intégrer dans le contrôleur

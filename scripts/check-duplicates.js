@@ -9,59 +9,41 @@ const fs = require('fs');
 const path = require('path');
 
 const FILE = path.join(__dirname, '..', 'js', 'data', 'emoji-data.js');
+const CATEGORIES_DIR = path.join(__dirname, '..', 'js', 'data', 'categories');
 
 function main() {
-  const src = fs.readFileSync(FILE, 'utf8');
-  const lines = src.split(/\r?\n/);
+  const decodeEscapes = (s) =>
+    s.replace(/\\u\{([0-9a-fA-F]+)\}/g, (_, h) => String.fromCodePoint(parseInt(h, 16)));
+  const occurrences = new Map(); // emoji -> [{ file, line, category }]
 
-  // Track when we are inside static CATEGORIES to infer category labels.
-  let inCategories = false;
-  let braceDepth = 0;
-  let currentCategory = null;
-
-  const occurrences = new Map(); // emoji -> [{ line, category }]
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-
-    if (!inCategories && /static\s+CATEGORIES\s*=\s*{/.test(line)) {
-      inCategories = true;
-      // Initialize depth at count of { minus }
-      braceDepth = (line.match(/{/g) || []).length - (line.match(/}/g) || []).length;
-      continue;
-    }
-
-    if (inCategories) {
-      // Update depth first (so we can detect when we leave the object)
-      braceDepth += (line.match(/{/g) || []).length;
-      braceDepth -= (line.match(/}/g) || []).length;
-
-      // Detect category keys when at depth 2 immediately after entering CATEGORIES (depth 1 is the CATEGORIES object itself)
-      // Pragmatically: when depth === 2 and the line looks like 'category': {
-      const catMatch = braceDepth >= 1 && line.match(/^\s*['"]([^'\"]+)['"]\s*:\s*{\s*$/);
-      if (catMatch && braceDepth === 2) {
-        currentCategory = catMatch[1];
-      }
-
-      // Extract emoji literals on this line
-      const regex = /emoji:\s*['"]([^'\"]+)['"]/g;
+  function addFromSource(src, fileLabel, categoryLabel) {
+    const lines = src.split(/\r?\n/);
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
       let m;
-      while ((m = regex.exec(line)) !== null) {
-        const emoji = m[1];
+      const re = /emoji:\s*['"]([^'\"]+)['"]/g;
+      while ((m = re.exec(line)) !== null) {
+        const emoji = decodeEscapes(m[1]);
         const list = occurrences.get(emoji) || [];
-        list.push({ line: i + 1, category: currentCategory });
+        list.push({ file: fileLabel, line: i + 1, category: categoryLabel });
         occurrences.set(emoji, list);
-      }
-
-      if (braceDepth <= 0) {
-        inCategories = false;
-        currentCategory = null;
       }
     }
   }
 
-  const duplicates = [...occurrences.entries()].filter(([, locs]) => locs.length > 1);
+  if (fs.existsSync(CATEGORIES_DIR)) {
+    const files = fs.readdirSync(CATEGORIES_DIR).filter((f) => f.endsWith('.js'));
+    for (const f of files) {
+      const src = fs.readFileSync(path.join(CATEGORIES_DIR, f), 'utf8');
+      const cat = f.replace(/\.js$/, '');
+      addFromSource(src, `categories/${f}`, cat);
+    }
+  } else {
+    const src = fs.readFileSync(FILE, 'utf8');
+    addFromSource(src, 'emoji-data.js', 'unknown');
+  }
 
+  const duplicates = [...occurrences.entries()].filter(([, locs]) => locs.length > 1);
   const total = [...occurrences.keys()].length;
   if (duplicates.length === 0) {
     console.log(`OK: ${total} emojis, no duplicates found.`);
@@ -69,9 +51,7 @@ function main() {
   } else {
     console.log(`Found ${duplicates.length} duplicate emoji (of ${total} total):`);
     for (const [emoji, locs] of duplicates) {
-      const where = locs
-        .map(l => `${l.category || 'unknown'}@L${l.line}`)
-        .join(', ');
+      const where = locs.map((l) => `${l.category || 'unknown'}@${l.file}:L${l.line}`).join(', ');
       console.log(`- ${emoji} -> ${locs.length} occurrences: ${where}`);
     }
     process.exit(1);

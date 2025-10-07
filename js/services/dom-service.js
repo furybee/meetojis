@@ -72,7 +72,8 @@ class DomService {
     const currentValue = textarea.value;
     const cursorPosition = textarea.selectionStart || currentValue.length;
 
-    textarea.value = currentValue.slice(0, cursorPosition) + text + currentValue.slice(cursorPosition);
+    textarea.value =
+      currentValue.slice(0, cursorPosition) + text + currentValue.slice(cursorPosition);
 
     // Trigger events
     textarea.dispatchEvent(new Event('input', { bubbles: true }));

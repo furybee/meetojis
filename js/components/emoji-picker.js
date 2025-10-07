@@ -28,9 +28,8 @@ class EmojiPicker {
     this.renderEmojis(this.emojiService.getEmojisByCategory(this.currentCategory));
 
     // Setup click outside handler
-    this.cleanupClickOutside = this.domService.addClickOutsideListener(
-      this.pickerElement,
-      () => this.hide()
+    this.cleanupClickOutside = this.domService.addClickOutsideListener(this.pickerElement, () =>
+      this.hide()
     );
 
     // Focus search input
@@ -75,7 +74,7 @@ class EmojiPicker {
   createPickerElement() {
     const picker = this.domService.createElement('div', {
       id: 'meetojis-picker',
-      className: 'meetojis-picker'
+      className: 'meetojis-picker',
     });
 
     // Add components
@@ -91,24 +90,24 @@ class EmojiPicker {
    */
   createHeader() {
     const header = this.domService.createElement('div', {
-      className: 'meetojis-header'
+      className: 'meetojis-header',
     });
 
     // Search container
     const searchContainer = this.domService.createElement('div', {
-      className: 'meetojis-search-container'
+      className: 'meetojis-search-container',
     });
 
     // Search icon
     const searchIcon = this.domService.createElement('span', {
       className: 'meetojis-search-icon',
-      innerHTML: this.emojiService.getUIIcon('search')
+      innerHTML: this.emojiService.getUIIcon('search'),
     });
 
     // Search input
     const searchInput = this.domService.createElement('input', {
       type: 'text',
-      className: 'meetojis-search'
+      className: 'meetojis-search',
     });
 
     searchInput.addEventListener('input', (e) => this.handleSearch(e.target.value));
@@ -119,7 +118,7 @@ class EmojiPicker {
     // Close button
     const closeButton = this.domService.createElement('button', {
       className: 'meetojis-close',
-      innerHTML: this.emojiService.getUIIcon('close')
+      innerHTML: this.emojiService.getUIIcon('close'),
     });
 
     closeButton.addEventListener('click', () => this.hide());
@@ -135,11 +134,11 @@ class EmojiPicker {
    */
   createScrollContainer() {
     const scrollContainer = this.domService.createElement('div', {
-      className: 'meetojis-scroll-container'
+      className: 'meetojis-scroll-container',
     });
 
     const emojiContainer = this.domService.createElement('div', {
-      className: 'meetojis-emoji-container'
+      className: 'meetojis-emoji-container',
     });
 
     scrollContainer.appendChild(emojiContainer);
@@ -155,14 +154,14 @@ class EmojiPicker {
    */
   createCategoryTabs() {
     const categoriesContainer = this.domService.createElement('div', {
-      className: 'meetojis-categories'
+      className: 'meetojis-categories',
     });
 
-    this.emojiService.getCategoryKeys().forEach(categoryKey => {
+    this.emojiService.getCategoryKeys().forEach((categoryKey) => {
       const categoryBtn = this.domService.createElement('button', {
         className: 'meetojis-category-btn',
         innerHTML: this.emojiService.getCategoryIcon(categoryKey),
-        dataset: { category: categoryKey }
+        dataset: { category: categoryKey },
       });
 
       if (categoryKey === this.currentCategory) {
@@ -210,7 +209,7 @@ class EmojiPicker {
     if (!this.pickerElement) return;
 
     const tabs = this.pickerElement.querySelectorAll('.meetojis-category-btn');
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       tab.classList.toggle('active', tab.dataset.category === this.currentCategory);
     });
   }
@@ -226,11 +225,11 @@ class EmojiPicker {
 
     emojiContainer.innerHTML = '';
 
-    emojis.forEach(emojiObj => {
+    emojis.forEach((emojiObj) => {
       const emojiBtn = this.domService.createElement('button', {
         className: 'meetojis-emoji-btn',
         textContent: emojiObj.emoji,
-        title: emojiObj.keywords.join(', ')
+        title: emojiObj.keywords.join(', '),
       });
 
       emojiBtn.addEventListener('click', () => {
