@@ -1,0 +1,170 @@
+.meetojis-btn {
+  background: white;
+  /*background: #0b57d0;*/
+    border: none;
+  border-radius: 24px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  height: 48px;
+  width: 48px;
+  margin-right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.35s;
+  transition-timing-function: cubic-bezier(0.27, 1.06, 0.18, 1);
+  transition-property: border-radius;
+  flex-shrink: 1;
+  position: relative;
+  box-sizing: border-box;
+  padding: 12px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-self: center !important;
+}
+
+.meetojis-btn:hover {
+  background: #f0f1f1;
+}
+
+.meetojis-picker {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 12px;
+  width: 300px;
+  height: 300px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+}
+
+.meetojis-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.meetojis-search-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.meetojis-search-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1;
+    fill: #666666
+}
+
+.meetojis-search {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.meetojis-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  /*font-weight: bold;*/
+  color: #666;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.meetojis-close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.meetojis-search:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.meetojis-categories {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 8px;
+}
+
+.meetojis-category-btn {
+  background: none;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  color: #666;
+}
+
+.meetojis-category-btn:hover {
+  background: #f0f0f0;
+}
+
+.meetojis-category-btn.active {
+  background: #e3f2fd;
+  border: 2px solid #1a73e8;
+  color: #1a73e8;
+}
+
+.meetojis-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 8px 0;
+}
+
+.meetojis-emoji-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 4px;
+}
+
+.meetojis-emoji-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  height: 32px;
+  width: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.meetojis-emoji-btn:hover {
+  background: #f5f5f5;
+}
