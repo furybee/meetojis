@@ -1,5 +1,3 @@
-// Category: transports
-// Auto-split from emoji-data.js
 window.EmojiCategoryTransports = {
   name: 'Transports',
   emojis: [

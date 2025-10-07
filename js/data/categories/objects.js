@@ -1,5 +1,3 @@
-// Category: objects
-// Auto-split from emoji-data.js
 window.EmojiCategoryObjects = {
   name: 'Objects & Symbols',
   emojis: [

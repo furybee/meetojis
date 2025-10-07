@@ -1,6 +1,3 @@
-// Flags category split out to keep js/data/emoji-data.js lean
-// Exposed on window to match the codebase pattern (no bundler)
-
 window.EmojiCategoryFlags = {
   name: 'Flags',
   emojis: [

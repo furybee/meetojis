@@ -1,5 +1,3 @@
-// Category: sports
-// Auto-split from emoji-data.js
 window.EmojiCategorySports = {
   name: 'Sports & Activities',
   emojis: [

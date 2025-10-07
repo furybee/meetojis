@@ -1,5 +1,3 @@
-// Category: animals
-// Auto-split from emoji-data.js
 window.EmojiCategoryAnimals = {
   name: 'Animals & Nature',
   emojis: [

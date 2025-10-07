@@ -1,5 +1,3 @@
-// Category: buildings
-// Auto-split from emoji-data.js
 window.EmojiCategoryBuildings = {
   name: 'Buildings & Places',
   emojis: [

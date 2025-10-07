@@ -1,5 +1,3 @@
-// Category: gestures
-// Auto-split from emoji-data.js
 window.EmojiCategoryGestures = {
   name: 'Gestures',
   emojis: [

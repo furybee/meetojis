@@ -1,5 +1,3 @@
-// Category: smileys
-// Auto-split from emoji-data.js
 window.EmojiCategorySmileys = {
   name: 'Smileys & People',
   emojis: [
