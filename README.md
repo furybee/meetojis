@@ -44,6 +44,10 @@ MIT
 - `node scripts/find-missing-flags.js` — compare `flags` with `scripts/flags-by-code.json` and generate a snippet of missing ones.
 - `node scripts/split-categories.js` — split inline categories into `js/data/categories/` and update the manifest.
 
+### Build Extension
+
+- `scripts/build.sh` — create a clean zip in `dist/` with only required files.
+
 ### Code Style
 
 - Prettier is used for formatting:
@@ -56,3 +60,13 @@ MIT
 - Style: ES6, 2‑space indent, kebab‑case filenames, PascalCase classes; expose constructs on `window`.
 - Commits: small, imperative; prefer Conventional Commits (`feat:`, `fix:`, `refactor:`).
 - PRs: include a clear description, linked issues, and a short screen recording or screenshots showing the picker behavior.
+
+### Report Issues
+
+- Found a bug? Open an issue at: https://github.com/furybee/meetojis
+
+### Support Us
+
+- Buy Me a Coffee: https://www.buymeacoffee.com/xyugxh7bk
+- Credit Card (Stripe): https://donate.stripe.com/fZeg1Sgml971dbieUU
+- PayPal: https://www.paypal.com/donate/?hosted_button_id=T7KZA4MLT5XTU

@@ -10,7 +10,8 @@ async function checkGoogleMeetStatus() {
     if (tab && tab.url && tab.url.includes('meet.google.com')) {
       statusElement.className = 'status active';
       statusElement.innerHTML =
-        '<strong>Active on Google Meet!</strong><br><small>Look for the 😊 button in the chat</small>';
+        '<strong>Active on Google Meet!</strong><br>' +
+        '<small>Look for the <img src="icons/icon48.png" alt="Meetojis icon" width="14" height="14" style="vertical-align: text-bottom; border-radius: 50%;" /> button in the chat</small>';
     } else {
       statusElement.className = 'status inactive';
       statusElement.innerHTML =
