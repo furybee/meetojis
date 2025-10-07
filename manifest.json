@@ -12,7 +12,15 @@
   "content_scripts": [
     {
       "matches": ["https://meet.google.com/*"],
-      "js": ["content.js"],
+      "js": [
+        "js/data/emoji-data.js",
+        "js/services/dom-service.js",
+        "js/services/emoji-service.js",
+        "js/components/emoji-button.js",
+        "js/components/emoji-picker.js",
+        "js/meetojis-controller.js",
+        "js/content.js"
+      ],
       "css": ["content.css"]
     }
   ],
