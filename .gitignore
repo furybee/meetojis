@@ -44,3 +44,4 @@ build/
 
 # AI Agents
 .claude
+AGENTS.md
